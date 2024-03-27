@@ -11,11 +11,11 @@ struct ComposeView: UIViewControllerRepresentable {
 }
 
 struct ContentView: View {
+    let phrases = Greeting().greet()
+
     var body: some View {
-        ComposeView()
-                .ignoresSafeArea(.keyboard) // Compose has own keyboard handler
+        List(phrases, id: \.self) {
+            Text($0)
+        }
     }
 }
-
-
-
