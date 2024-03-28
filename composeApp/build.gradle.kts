@@ -34,6 +34,9 @@ kotlin {
         androidMain.dependencies {
             implementation(libs.compose.ui.tooling.preview)
             implementation(libs.androidx.activity.compose)
+            implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+            implementation("androidx.lifecycle:lifecycle-runtime-compose:2.6.2")
+            implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.2")
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -82,6 +85,11 @@ android {
     dependencies {
         debugImplementation(libs.compose.ui.tooling)
     }
+}
+dependencies {
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(project(":composeApp"))
 }
 
 compose.desktop {
